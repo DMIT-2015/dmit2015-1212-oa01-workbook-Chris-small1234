@@ -22,7 +22,7 @@ public class AlbertaCovid19CaseManager {
     private List<AlbertaCovid19CaseData> loadCsvData() throws IOException {
                 List<AlbertaCovid19CaseData> dataList = new ArrayList<>();
                 try (var reader = new BufferedReader(new InputStreamReader(
-                        getClass().getResourceAsStream("/data/covid-19-alberta-statistics-summary-data.csv")))) {
+                        getClass().getResourceAsStream("/data/covid-19-alberta-statistics-case-data.csv")))) {
                     final var delimiter = ",(?=(?:[^\"]*\"[^\"]*\")*[^\"]*$)";
                     String line;
                     // Skip the first line as it contains column headings

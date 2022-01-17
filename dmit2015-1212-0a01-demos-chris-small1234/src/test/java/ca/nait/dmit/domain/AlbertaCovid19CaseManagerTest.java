@@ -10,6 +10,6 @@ class AlbertaCovid19CaseManagerTest {
     @Test
     void getAlbertaCovid19CaseList() throws IOException {
         AlbertaCovid19CaseManager caseManager = new AlbertaCovid19CaseManager();
-        assertEquals(436495, caseManager.albertaCovid19CaseDataList().size());
+        assertEquals(436495, caseManager.getAlbertaCovid19CaseDataList().size());
     }
 }
