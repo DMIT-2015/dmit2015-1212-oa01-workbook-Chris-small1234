@@ -8,18 +8,23 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class AlbertaCovid19SummaryDataService {
 
     @Getter
-    private List<AlbertaCovid19SummaryData> dataList = new ArrayList<>();
+    private List<AlbertaCovid19SummaryData> dataList;
 
     public AlbertaCovid19SummaryDataService() throws IOException {
+        dataList = loadCsvData();
+    }
+
+    private List<AlbertaCovid19SummaryData> loadCsvData() throws IOException{
+        List<AlbertaCovid19SummaryData> dataList = new ArrayList<>();
+
         try (var reader = new BufferedReader(new InputStreamReader(
                 getClass().getResourceAsStream("/data/covid-19-alberta-statistics-summary-data.csv")))) {
-            final var delimiter = ",";
+            final var delimiter = ",(?=(?:[^\\\"]*\\\"[^\\\"]*\\\")*[^\\\"]*$)";
             String line;
             // Skip the first line as it contains the column headings
             reader.readLine();
@@ -62,5 +67,6 @@ public class AlbertaCovid19SummaryDataService {
                 dataList.add(lineData);
             }
         }
+        return dataList;
     }
 }
