@@ -12,12 +12,30 @@ import java.util.List;
 
 public class AlbertaCovid19CaseManager {
 
+    private static AlbertaCovid19CaseManager instance;
+
+    private AlbertaCovid19CaseManager() throws IOException {
+        albertaCovid19CaseDataList = loadCsvData();
+    }
+
+    public static AlbertaCovid19CaseManager getInstance() throws IOException {
+        // https://www.journaldev.com/1377/java-singleton-design-pattern-best-practices-examples#thread-safe-singleton
+        if(instance == null){
+            synchronized (AlbertaCovid19CaseManager.class) {
+                if(instance == null){
+                    instance = new AlbertaCovid19CaseManager();
+                }
+            }
+        }
+        return instance;
+    }
+
     @Getter
     private List<AlbertaCovid19CaseData> albertaCovid19CaseDataList;
 
-    public AlbertaCovid19CaseManager() throws IOException {
-        albertaCovid19CaseDataList = loadCsvData();
-    }
+//    public AlbertaCovid19CaseManager() throws IOException {
+//        albertaCovid19CaseDataList = loadCsvData();
+//    }
 
     private List<AlbertaCovid19CaseData> loadCsvData() throws IOException {
                 List<AlbertaCovid19CaseData> dataList = new ArrayList<>();
