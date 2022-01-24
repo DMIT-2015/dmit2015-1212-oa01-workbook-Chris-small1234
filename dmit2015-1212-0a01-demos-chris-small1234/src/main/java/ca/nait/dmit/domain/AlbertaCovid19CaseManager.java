@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class AlbertaCovid19CaseManager {
@@ -74,6 +75,13 @@ public class AlbertaCovid19CaseManager {
             }
         }
         return dataList;
+    }
+
+    public Optional<AlbertaCovid19CaseData> findById(int id) {
+        return albertaCovid19CaseDataList
+                .stream()
+                .filter(item -> item.getId() == id) // Can only use the == operator when using int
+                .findFirst();
     }
 
     public long countTotalActiveCases() {
