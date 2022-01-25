@@ -56,6 +56,5 @@ class AlbertaCovid19CaseManagerTest {
 
         Optional<AlbertaCovid19CaseData> noOptionalResult = caseManager.findById(-1);
         assertTrue(noOptionalResult.isEmpty());
-
     }
 }
