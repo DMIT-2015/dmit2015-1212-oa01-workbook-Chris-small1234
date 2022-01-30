@@ -18,5 +18,4 @@
                       value="/home/user2015/Desktop/hsqldb-create-tables.sql"/>
         </properties>
     </persistence-unit>
-
 </persistence>
