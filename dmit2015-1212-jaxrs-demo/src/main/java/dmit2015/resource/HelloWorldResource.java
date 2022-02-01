@@ -10,6 +10,12 @@ import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 import java.io.File;
 import java.io.InputStream;
+
+/**
+ * curl -k -i -X GET http://localhost:8080/dmit2015-1212-jaxrs-demo/webapi/helloworld -H 'Accept: text/plain'
+ * curl -k -i -X GET http://localhost:8080/dmit2015-1212-jaxrs-demo/webapi/helloworld -H 'Accept: text/html'
+ * curl -k -i -X GET http://localhost:8080/dmit2015-1212-jaxrs-demo/webapi/helloworld -H 'Accept: application/json'
+*/
 @RequestScoped
 @Path("/helloworld")
 public class HelloWorldResource {
