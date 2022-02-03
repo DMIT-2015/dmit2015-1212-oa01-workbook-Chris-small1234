@@ -39,13 +39,8 @@ class OscarReviewRepositoryIT {
         PomEquippedResolveStage pomFile = Maven.resolver().loadPomFromFile("pom.xml");
 
         return ShrinkWrap.create(WebArchive.class,"test.war")
-//                .addAsLibraries(pomFile.resolve("groupId:artifactId:version").withTransitivity().asFile())
-//                .addAsLibraries(pomFile.resolve("com.h2database:h2:2.1.210").withTransitivity().asFile())
                 .addAsLibraries(pomFile.resolve("org.hsqldb:hsqldb:2.6.1").withTransitivity().asFile())
-//                .addAsLibraries(pomFile.resolve("com.microsoft.sqlserver:mssql-jdbc:8.4.1.jre11").withTransitivity().asFile())
-//                .addAsLibraries(pomFile.resolve("com.oracle.database.jdbc:ojdbc11:21.1.0.0").withTransitivity().asFile())
                 .addAsLibraries(pomFile.resolve("org.hamcrest:hamcrest:2.2").withTransitivity().asFile())
-//                .addAsLibraries(pomFile.resolve("org.hibernate:hibernate-core-jakarta:5.6.5.Final").withTransitivity().asFile())
                 .addClass(ApplicationConfig.class)
                 .addClasses(OscarReview.class, OscarReviewRepository.class)
                 .addAsResource("META-INF/persistence.xml")
@@ -60,7 +55,7 @@ class OscarReviewRepositoryIT {
         Exception exception = assertThrows(ConstraintViolationException.class, () -> {
             _oscarReviewRepository.add(emptyOscarReview);
         });
-        assertTrue(exception.getMessage().contains("The Release Date field is required"));
+        assertTrue(exception.getMessage().contains("The Nominee field is required"));
     }
 
     @Order(2)
@@ -73,7 +68,7 @@ class OscarReviewRepositoryIT {
         currentOscarReview.setReview("Poor");
         currentOscarReview.setUsername("reviewer@gmail.com");
         currentOscarReview.setCreatedDateTime(LocalDateTime.parse("2021-01-21 09:00:09", formatter));
-        //currentOscarReview.setLastModifiedDateTime(LocalDateTime.parse("2021-02-02T08:00:00"));
+        currentOscarReview.setLastModifiedDateTime(LocalDateTime.parse("2021-02-02T08:00:00"));
         _oscarReviewRepository.add(currentOscarReview);
 
         Optional<OscarReview> optionalOscarReview = _oscarReviewRepository.findById(currentOscarReview.getId());
@@ -83,8 +78,8 @@ class OscarReviewRepositoryIT {
         assertEquals(currentOscarReview.getNominee(), existingOscarReview.getNominee());
         assertEquals(currentOscarReview.getReview(), existingOscarReview.getReview());
         assertEquals(currentOscarReview.getUsername(), existingOscarReview.getUsername());
-        assertEquals(currentOscarReview.getCreatedDateTime(), existingOscarReview.getCreatedDateTime());
-        //assertEquals(currentOscarReview.getLastModifiedDateTime(), existingOscarReview.getLastModifiedDateTime());
+        long lastModifedDateTimeDifferce = currentOscarReview.getLastModifiedDateTime().until(existingOscarReview.getLastModifiedDateTime(), ChronoUnit.MINUTES);
+        assertEquals(0, lastModifedDateTimeDifferce);
     }
 
     @Order(3)
@@ -95,10 +90,12 @@ class OscarReviewRepositoryIT {
         assertTrue(optionalOscarReview.isPresent());
         OscarReview existingOscarReview = optionalOscarReview.get();
         assertNotNull(existingOscarReview);
+        assertEquals(currentOscarReview.getCategory(), existingOscarReview.getCategory());
         assertEquals(currentOscarReview.getNominee(), existingOscarReview.getNominee());
         assertEquals(currentOscarReview.getReview(), existingOscarReview.getReview());
         assertEquals(currentOscarReview.getUsername(), existingOscarReview.getUsername());
-        assertEquals(currentOscarReview.getLastModifiedDateTime(), existingOscarReview.getLastModifiedDateTime());
+        long lastModifedDateTimeDifferce = currentOscarReview.getLastModifiedDateTime().until(existingOscarReview.getLastModifiedDateTime(), ChronoUnit.MINUTES);
+        assertEquals(0, lastModifedDateTimeDifferce);
     }
 
     @Order(1)
@@ -109,15 +106,16 @@ class OscarReviewRepositoryIT {
         assertEquals(4, queryResultList.size());
 
         OscarReview firstOscarReview = queryResultList.get(0);
-        assertEquals("When Harry Met Sally", firstOscarReview.getNominee());
-        assertEquals("Romantic Comedy", firstOscarReview.getReview());
-        assertEquals(7.99, firstOscarReview.getUsername());
+        assertEquals("editing", firstOscarReview.getCategory());
+        assertEquals("Harry", firstOscarReview.getNominee());
+        assertEquals("good", firstOscarReview.getReview());
+        assertEquals("reviewer@gmail.com", firstOscarReview.getUsername());
 
         OscarReview lastOscarReview = queryResultList.get(queryResultList.size() - 1);
-        assertEquals("Rio Bravo", lastOscarReview.getNominee());
-        assertEquals("Western", lastOscarReview.getReview());
-        assertEquals("blah", lastOscarReview.getUsername());
-        assertEquals(LocalDate.parse("1959-04-15", formatter).toString(), lastOscarReview.getLastModifiedDateTime().toString());
+        assertEquals("film", lastOscarReview.getCategory());
+        assertEquals("Harry Potter", lastOscarReview.getNominee());
+        assertEquals("good", lastOscarReview.getReview());
+        assertEquals("reviewer@gmail.com", lastOscarReview.getUsername());
 
         queryResultList.forEach(System.out::println);
     }
@@ -125,10 +123,10 @@ class OscarReviewRepositoryIT {
     @Order(4)
     @Test
     void shouldUpdate() {
-        currentOscarReview.setNominee("Comedy");
-        currentOscarReview.setReview("JDK 16 Release ");
-        currentOscarReview.setUsername("PG-13");
-        currentOscarReview.setLastModifiedDateTime(LocalDateTime.parse("2021-03-16"));
+        currentOscarReview.setNominee("William Dafoe");
+        currentOscarReview.setReview("Outstanding");
+        currentOscarReview.setUsername("Steven");
+        currentOscarReview.setLastModifiedDateTime(LocalDateTime.parse("2021-03-16T08:00:05"));
         _oscarReviewRepository.update(currentOscarReview);
 
         Optional<OscarReview> optionalUpdatedOscarReview = _oscarReviewRepository.findById(currentOscarReview.getId());
@@ -138,8 +136,6 @@ class OscarReviewRepositoryIT {
         assertEquals(currentOscarReview.getNominee(), updatedOscarReview.getNominee());
         assertEquals(currentOscarReview.getReview(), updatedOscarReview.getReview());
         assertEquals(currentOscarReview.getUsername(), updatedOscarReview.getUsername());
-
-        //assertEquals(currentOscarReview.getReleaseDate(), updatedOscarReview.getReleaseDate());
     }
 
     @Order(5)
