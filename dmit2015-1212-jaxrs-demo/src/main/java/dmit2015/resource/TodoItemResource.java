@@ -37,17 +37,17 @@ import java.util.Optional;
  -d '{"name":"Finish DMIT2015 Assignment 1","complete":false}' \
  -H 'Content-Type:application/json'
 
- curl -i -X GET http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems/4
+ curl -i -X GET http://localhost:8080/dmit2015-1212-jaxrs-demo/webapi/TodoItems/4
 
- curl -i -X PUT http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems/4 \
+ curl -i -X PUT http://localhost:8080/dmit2015-1212-jaxrs-demo/webapi/TodoItems/4 \
  -d '{"id":4,"name":"Demo DMIT2015 Assignment 1","complete":true}' \
  -H 'Content-Type:application/json'
 
- curl -i -X GET http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems/4
+ curl -i -X GET http://localhost:8080/dmit2015-1212-jaxrs-demo/webapi/TodoItems/4
 
- curl -i -X DELETE http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems/4
+ curl -i -X DELETE http://localhost:8080/dmit2015-1212-jaxrs-demo/webapi/TodoItems/4
 
- curl -i -X GET http://localhost:8080/dmit2015-jaxrs-demo/webapi/TodoItems/4
+ curl -i -X GET http://localhost:8080/dmit2015-1212-jaxrs-demo/webapi/TodoItems/4
 
  *
  */
@@ -70,9 +70,9 @@ public class TodoItemResource {
         if (newTodoItem == null) {
             throw new BadRequestException();
         }
-        // If adding the new item fails, it will then return the server error instead of the 201 (Created) server code
+
         try {
-            todoItemRepository.add(newTodoItem);
+            todoItemRepository.create(newTodoItem);
         } catch (Exception ex) {
             ex.printStackTrace();
             return Response
@@ -80,14 +80,15 @@ public class TodoItemResource {
                     .entity(ex.getMessage())
                     .build();
         }
-        URI todoItemsUri = uriInfo.getAbsolutePathBuilder().path(newTodoItem.getId().toString()).build();
+
+        URI todoItemsUri = uriInfo.getAbsolutePathBuilder().path(newTodoItem.getTodoItemId().toString()).build();
         return Response.created(todoItemsUri).build();
     }
 
     @GET    // GET: /webapi/TodoItems/5
     @Path("{id}")
     public Response getTodoItem(@PathParam("id") Long id) {
-        Optional<TodoItem> optionalTodoItem = todoItemRepository.findById(id);
+        Optional<TodoItem> optionalTodoItem = todoItemRepository.findOptional(id);
 
         if (optionalTodoItem.isEmpty()) {
             throw new NotFoundException();
@@ -99,28 +100,36 @@ public class TodoItemResource {
 
     @GET    // GET: /webapi/TodoItems
     public Response getTodoItems() {
-        return Response.ok(todoItemRepository.findAll()).build();
+        return Response.ok(todoItemRepository.list()).build();
     }
 
     @PUT    // PUT: /webapi/TodoItems/5
     @Path("{id}")
     public Response updateTodoItem(@PathParam("id") Long id, @Valid TodoItem updatedTodoItem) {
-        if (!id.equals(updatedTodoItem.getId())) {
+        if (!id.equals(updatedTodoItem.getTodoItemId())) {
             throw new BadRequestException();
         }
-        Optional<TodoItem> optionalTodoItem = todoItemRepository.findById(id);
+
+        Optional<TodoItem> optionalTodoItem = todoItemRepository.findOptional(id);
+
         if (optionalTodoItem.isEmpty()) {
             throw new NotFoundException();
         }
-        todoItemRepository.update(updatedTodoItem);
-
+        try {
+            todoItemRepository.update(updatedTodoItem);
+        } catch(Exception e) {
+            e.printStackTrace();
+            return Response.serverError()
+                    .entity(e.getMessage())
+                    .build();
+        }
         return Response.ok(updatedTodoItem).build();
     }
 
     @DELETE // DELETE: /webapi/TodoItems/5
     @Path("{id}")
     public Response deleteTodoItem(@PathParam("id") Long id) {
-        Optional<TodoItem> optionalTodoItem = todoItemRepository.findById(id);
+        Optional<TodoItem> optionalTodoItem = todoItemRepository.findOptional(id);
 
         if (optionalTodoItem.isEmpty()) {
             throw new NotFoundException();

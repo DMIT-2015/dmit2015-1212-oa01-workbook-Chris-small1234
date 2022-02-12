@@ -9,13 +9,17 @@
         <sourceRoots>
           <root url="file://$MODULE_DIR$/src/main/java" />
           <root url="file://$MODULE_DIR$/src/main/resources" />
+          <root url="file://$MODULE_DIR$/target/generated-sources/annotations" />
         </sourceRoots>
       </configuration>
     </facet>
     <facet type="jpa" name="JPA">
       <configuration>
         <setting name="validation-enabled" value="true" />
-        <datasource-mapping />
+        <datasource-mapping>
+          <factory-entry name="hsqldatabase-jpa-pu" />
+          <factory-entry name="mssql-jpa-pu" />
+        </datasource-mapping>
         <naming-strategy-map />
         <deploymentDescriptor name="persistence.xml" url="file://$MODULE_DIR$/src/main/resources/META-INF/persistence.xml" />
       </configuration>
@@ -29,6 +33,7 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/resources" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/target/generated-sources/annotations" isTestSource="false" generated="true" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -62,7 +67,7 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.antlr:antlr4-runtime:4.9.1" level="project" />
     <orderEntry type="library" name="Maven: com.h2database:h2:2.1.210" level="project" />
     <orderEntry type="library" name="Maven: org.hsqldb:hsqldb:2.6.1" level="project" />
-    <orderEntry type="library" name="Maven: com.microsoft.sqlserver:mssql-jdbc:9.4.1.jre11" level="project" />
+    <orderEntry type="library" name="Maven: com.microsoft.sqlserver:mssql-jdbc:10.2.0.jre17" level="project" />
     <orderEntry type="library" name="Maven: com.oracle.database.jdbc:ojdbc11:21.4.0.0.1" level="project" />
     <orderEntry type="library" name="Maven: org.postgresql:postgresql:42.3.1" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.checkerframework:checker-qual:3.5.0" level="project" />
@@ -255,10 +260,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.jboss.spec.javax.rmi:jboss-rmi-api_1.0_spec:1.0.6.Final" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.apache.cxf:cxf-rt-rs-extension-providers:3.4.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.bitbucket.b_c:jose4j:0.7.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse:yasson:1.0.8" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: jakarta.json.bind:jakarta.json.bind-api:1.0.2" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: jakarta.json:jakarta.json-api:1.1.6" level="project" />
-    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish:jakarta.json:module:1.1.6" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.glassfish:javax.json:1.1.4" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.testcontainers:junit-jupiter:1.15.0" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.microshed:microshed-testing-wildfly:0.9.1" level="project" />
@@ -288,5 +289,10 @@
     <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.13.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.13.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: com.fasterxml.jackson.core:jackson-core:2.13.1" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.eclipse:yasson:2.0.4" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: jakarta.json.bind:jakarta.json.bind-api:2.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: jakarta.json:jakarta.json-api:2.0.0" level="project" />
+    <orderEntry type="library" scope="TEST" name="Maven: org.glassfish:jakarta.json:module:2.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.mapstruct:mapstruct:1.4.2.Final" level="project" />
   </component>
 </module>

@@ -1,0 +1,2 @@
+### Get all Movies
+GET http://localhost:8080/dmit2015-1212-jaxrs-demo/webapi/Movies
