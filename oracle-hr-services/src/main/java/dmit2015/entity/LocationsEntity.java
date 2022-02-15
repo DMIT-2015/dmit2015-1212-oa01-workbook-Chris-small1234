@@ -2,11 +2,12 @@ package dmit2015.entity;
 
 import jakarta.persistence.*;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 @Entity
 @Table(name = "LOCATIONS", schema = "HR", catalog = "")
-public class LocationsEntity {
+public class LocationsEntity implements Serializable {
     @Id
     @Column(name = "LOCATION_ID")
     private Short locationId;

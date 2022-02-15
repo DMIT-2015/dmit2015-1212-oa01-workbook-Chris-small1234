@@ -5,31 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="708ebbac-bc6b-40e8-bc1e-21c7c5243acc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8e5a9cfe-cb06-4028-ad42-ad986589d169.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8e5a9cfe-cb06-4028-ad42-ad986589d169/storage_v2/_src_/schema/HR.CgkAAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8e5a9cfe-cb06-4028-ad42-ad986589d169/storage_v2/_src_/schema/SYS.rUIBAA.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8e5a9cfe-cb06-4028-ad42-ad986589d169/storage_v2/_src_/schema/SYSTEM.L2avkg.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/oracle-hr-services.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/common/config/ApplicationConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/CountriesEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/DepartmentsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/EmpDetailsViewEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/EmployeesEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/JobHistoryEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/JobHistoryEntityPK.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/JobsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/LocationsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/RegionsEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/oraclehrservices/HelloApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/oraclehrservices/HelloResource.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../dmit2015-1212-jaxrs-demo/src/test/java/dmit2015/repository/TodoItemRepositoryIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dmit2015-1212-jaxrs-demo/src/test/java/dmit2015/repository/TodoItemRepositoryIT.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/common/jpa/AbstractJpaRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/common/validator/BeanValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/repository/JobsEntityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/repository/LocationsEntityRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/resource/JobsEntityResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/resource/LocationsEntityResource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dmit2015/entity/JobsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/JobsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dmit2015/entity/LocationsEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/LocationsEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dmit2015/oraclehrservices/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dmit2015/oraclehrservices/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +27,10 @@
         <option value="DMIT2015 JPA persistence.xml" />
         <option value="Class" />
         <option value="DMIT2015 JPA ApplicationConfig" />
+        <option value="DMIT2015 JPA Abstract Repository" />
+        <option value="DMIT2015 JPA Entity Repository" />
+        <option value="DMIT2015 JAX-RS Resource" />
+        <option value="DMIT2015 BeanValidator" />
       </list>
     </option>
   </component>
@@ -82,6 +71,9 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
@@ -90,13 +82,15 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -137,12 +131,25 @@
       <workItem from="1644881282530" duration="119000" />
       <workItem from="1644893932785" duration="85000" />
       <workItem from="1644937407144" duration="287000" />
-      <workItem from="1644938092049" duration="2698000" />
+      <workItem from="1644938092049" duration="5156000" />
+      <workItem from="1644946432139" duration="1117000" />
     </task>
+    <task id="LOCAL-00001" summary="Added oracle hr services project">
+      <created>1644940836559</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1644940836559</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added oracle hr services project" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added oracle hr services project" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
