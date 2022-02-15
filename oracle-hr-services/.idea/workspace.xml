@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="708ebbac-bc6b-40e8-bc1e-21c7c5243acc" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8e5a9cfe-cb06-4028-ad42-ad986589d169.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8e5a9cfe-cb06-4028-ad42-ad986589d169/storage_v2/_src_/schema/HR.CgkAAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8e5a9cfe-cb06-4028-ad42-ad986589d169/storage_v2/_src_/schema/SYS.rUIBAA.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/8e5a9cfe-cb06-4028-ad42-ad986589d169/storage_v2/_src_/schema/SYSTEM.L2avkg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/oracle-hr-services.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/common/config/ApplicationConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/CountriesEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/DepartmentsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/EmpDetailsViewEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/EmployeesEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/JobHistoryEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/JobHistoryEntityPK.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/JobsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/LocationsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/entity/RegionsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/oraclehrservices/HelloApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dmit2015/oraclehrservices/HelloResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/beans.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistance.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../dmit2015-1212-jaxrs-demo/src/test/java/dmit2015/repository/TodoItemRepositoryIT.java" beforeDir="false" afterPath="$PROJECT_DIR$/../dmit2015-1212-jaxrs-demo/src/test/java/dmit2015/repository/TodoItemRepositoryIT.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="DMIT2015 JPA persistence.xml" />
+        <option value="Class" />
+        <option value="DMIT2015 JPA ApplicationConfig" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="256wI1rmDECOMhFW3jW0AhceSh4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="oracle" />
+    <property name="JPA.DatabaseSchemaImportDialog" value="8e5a9cfe-cb06-4028-ad42-ad986589d169" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+  </component>
+  <component name="RecentsManager">
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="dmit2015.entity" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JBoss/WildFly 26.0.0.Final" type="JBossConfiguration" factoryName="Local" APPLICATION_SERVER_NAME="JBoss/WildFly 26.0.0.Final" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/oracle-hr-services-1.0-SNAPSHOT" />
+      <deployment>
+        <artifact name="oracle-hr-services:war exploded">
+          <settings />
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="SERVER" value="" />
+        <option name="BINDING_SET_NAME" value="" />
+        <option name="DOMAIN" value="false" />
+        <option name="SERVER_GROUP" value="" />
+        <option name="USERNAME" value="" />
+        <option name="CREDENTIAL_ALIAS" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="JBoss" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="oracle-hr-services:war exploded" />
+        </option>
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="708ebbac-bc6b-40e8-bc1e-21c7c5243acc" name="Changes" comment="" />
+      <created>1644860764115</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644860764115</updated>
+      <workItem from="1644860765799" duration="4031000" />
+      <workItem from="1644881282530" duration="119000" />
+      <workItem from="1644893932785" duration="85000" />
+      <workItem from="1644937407144" duration="287000" />
+      <workItem from="1644938092049" duration="2698000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

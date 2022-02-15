@@ -57,7 +57,7 @@ public class TodoItemRepositoryIT {
         currentTodoItem.setComplete(true);
         _todoRepository.create(currentTodoItem);
 
-        Optional<TodoItem> optionalTodoItem = _todoRepository.findOptional(currentTodoItem.getId());
+        Optional<TodoItem> optionalTodoItem = _todoRepository.findOptional(currentTodoItem.getTodoItemId());
         assertTrue(optionalTodoItem.isPresent());
         TodoItem existingTodoItem = optionalTodoItem.get();
         assertNotNull(existingTodoItem);
@@ -69,7 +69,7 @@ public class TodoItemRepositoryIT {
     @Order(3)
     @Test
     void shouldFindOne() {
-        final Long todoId = currentTodoItem.getId();
+        final Long todoId = currentTodoItem.getTodoItemId();
         Optional<TodoItem> optionalTodoItem = _todoRepository.findOptional(todoId);
         assertTrue(optionalTodoItem.isPresent());
         TodoItem existingTodoItem = optionalTodoItem.get();
@@ -101,7 +101,7 @@ public class TodoItemRepositoryIT {
         currentTodoItem.setComplete(false);
         _todoRepository.update(currentTodoItem);
 
-        Optional<TodoItem> optionalUpdatedTodoItem = _todoRepository.findOptional(currentTodoItem.getId());
+        Optional<TodoItem> optionalUpdatedTodoItem = _todoRepository.findOptional(currentTodoItem.getTodoItemId());
         assertTrue(optionalUpdatedTodoItem.isPresent());
         TodoItem updatedTodoItem = optionalUpdatedTodoItem.get();
         assertNotNull(updatedTodoItem);
@@ -113,12 +113,12 @@ public class TodoItemRepositoryIT {
     @Order(5)
     @Test
     void shouldDelete() {
-        final Long todoId = currentTodoItem.getId();
+        final Long todoId = currentTodoItem.getTodoItemId();
         Optional<TodoItem> optionalTodoItem = _todoRepository.findOptional(todoId);
         assertTrue(optionalTodoItem.isPresent());
         TodoItem existingTodoItem = optionalTodoItem.get();
         assertNotNull(existingTodoItem);
-        _todoRepository.remove(existingTodoItem.getId());
+        _todoRepository.remove(existingTodoItem.getTodoItemId());
         optionalTodoItem = _todoRepository.findOptional(todoId);
         assertTrue(optionalTodoItem.isEmpty());
     }
