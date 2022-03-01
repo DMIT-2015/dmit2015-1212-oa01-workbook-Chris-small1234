@@ -1,6 +1,5 @@
 package dmit2015.resource;
 
-import common.validator.BeanValidator;
 import dmit2015.entity.LocationsEntity;
 import dmit2015.repository.LocationsEntityRepository;
 import jakarta.enterprise.context.ApplicationScoped;

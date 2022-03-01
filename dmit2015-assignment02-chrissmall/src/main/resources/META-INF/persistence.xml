@@ -4,18 +4,22 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
 
-    <persistence-unit name="hsqldatabase-jpa-pu" transaction-type="JTA">
-        <jta-data-source>java:app/datasources/hsqldatabaseDS</jta-data-source>
+    <persistence-unit name="h2database-jpa-pu" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>java:app/datasources/h2databaseDS</jta-data-source>
+
         <properties>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.HSQLDialect"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+            <property name="jakarta.persistence.jdbc.driver" value="org.h2.Driver" />
+            <!--            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1" />-->
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:h2:file:~/jdk/databases/h2/DMIT2015_1212_CourseDB" />
+            <property name="jakarta.persistence.jdbc.user" value="user2015" />
+            <property name="jakarta.persistence.jdbc.password" value="Password" />
+
             <!-- database.action: drop-and-create, create, update, none -->
-            <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
-            <property name="javax.persistence.sql-load-script-source" value="META-INF/sql/import-data.sql" />
-            <property name="javax.persistence.schema-generation.scripts.action" value="drop-and-create"/>
-            <property name="javax.persistence.schema-generation.scripts.create-target"
-                      value="/home/user2015/Desktop/hsqldb-create-tables.sql"/>
-            <property name="javax.persistence.schema-generation.scripts.drop-target"
-                      value="/home/user2015/Desktop/hsqldb-create-tables.sql"/>
+            <property name="jakarta.persistence.schema-generation.database.action" value="drop-and-create"/>
+            <property name="jakarta.persistence.sql-load-script-source" value="META-INF/sql/import-data.sql" />
+
         </properties>
     </persistence-unit>
 </persistence>

@@ -1,4 +1,4 @@
-package common.config;
+package dmit2015.config;
 
 import jakarta.annotation.sql.DataSourceDefinition;
 import jakarta.annotation.sql.DataSourceDefinitions;

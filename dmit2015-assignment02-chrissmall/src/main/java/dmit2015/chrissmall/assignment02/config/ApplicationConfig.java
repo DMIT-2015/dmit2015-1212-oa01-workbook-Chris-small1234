@@ -6,9 +6,10 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 @DataSourceDefinitions({
 		@DataSourceDefinition(
-				name="java:app/datasources/hsqldatabaseDS",
-				className="org.hsqldb.jdbc.JDBCDataSource",
-				url="jdbc:hsqldb:mem:dmit2015assignment02chrissmall",
+				name="java:app/datasources/h2databaseDS",
+				className="org.h2.jdbcx.JdbcDataSource",
+				url="jdbc:h2:file:~/jdk/databases/h2/DMIT2015_1212_CourseDB",
+//		url="jdbc:h2:mem:test;DB_CLOSE_DELAY=-1",
 				user="user2015",
 				password="Password2015"),
 
