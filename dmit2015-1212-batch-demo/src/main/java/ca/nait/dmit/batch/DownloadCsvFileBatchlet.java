@@ -43,7 +43,6 @@ public class DownloadCsvFileBatchlet extends AbstractBatchlet {
         if(response.statusCode() == Response.Status.OK.getStatusCode()) {
             batchStatus = BatchStatus.FAILED.toString();
         }
-
         return batchStatus;
     }
 }

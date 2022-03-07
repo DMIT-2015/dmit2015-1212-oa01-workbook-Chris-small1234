@@ -72,21 +72,20 @@ public class EnforcementZoneCentreBatchlet extends AbstractBatchlet {
                 currentEnforcementZoneCentre.setLatitude(Double.valueOf(tokens[4]));
                 currentEnforcementZoneCentre.setLongitude(Double.valueOf(tokens[5]));
 
-                String wktText = "POINT" + tokens[6].replaceAll("[\",]","");
-                Point geoLocation = (org.locationtech.jts.geom.Point) new WKTReader().read(wktText);
-                currentEnforcementZoneCentre.setGeoLocation(geoLocation);
-
-//                Point geoLocation = new GeometryFactory().createPoint(
-//                        new Coordinate(
-//                                currentEnforcementZoneCentre.getLongitude(), currentEnforcementZoneCentre.getLatitude()
-//                        )
-//                );
+//                String wktText = "POINT" + tokens[6].replaceAll("[\",]","");
+//                Point geoLocation = (org.locationtech.jts.geom.Point) new WKTReader().read(wktText);
 //                currentEnforcementZoneCentre.setGeoLocation(geoLocation);
+
+                Point geoLocation = new GeometryFactory().createPoint(
+                        new Coordinate(
+                                currentEnforcementZoneCentre.getLongitude(), currentEnforcementZoneCentre.getLatitude()
+                        )
+                );
+                currentEnforcementZoneCentre.setGeoLocation(geoLocation);
 
                 _entityManager.persist(currentEnforcementZoneCentre);
             }
         }
-
         return "COMPLETED";     // The job has successfully completed
     }
 }

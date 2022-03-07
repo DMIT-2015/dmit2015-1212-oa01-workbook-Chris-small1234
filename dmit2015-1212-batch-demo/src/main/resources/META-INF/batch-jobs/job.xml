@@ -13,7 +13,7 @@
         <chunk item-count="50">
             <reader ref="enforcementZoneCentreItemReader">
                 <properties>
-                    <property name="input_file" value="/home/user2015/Downloads"/>
+                    <property name="input_file" value="/home/user2015/Downloads/Scheduled_Photo_Enforcement_Zone_Centre_Points.csv"/>
                 </properties>
             </reader>
             <processor ref="enforcementZoneCentreItemProcessor"></processor>
