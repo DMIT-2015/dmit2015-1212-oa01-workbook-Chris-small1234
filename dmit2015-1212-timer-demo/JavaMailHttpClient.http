@@ -1,0 +1,11 @@
+### Send an Email
+POST http://localhost:8080/dmit2015-1212-timer-demo/webapi/mail
+Content-Type: application/json
+
+{
+  "mailToAddresses": "smallchris19@gmail.com",
+  "mailSubject": "DMIT2015 WildFly mail subsystem",
+  "mailText": "This email was sent using the Wildfly mail subsystem and a stateless session bean."
+}
+
+
